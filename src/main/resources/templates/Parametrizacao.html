@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+	<!-- Javascript-->
+	
+	<script type="text/javascript">
+
+	
+	function processoNameGetValue() {
+		  var text = document.getElementById("valueprocesso");
+		  var select= document.getElementById("processo");
+		  var option = document.getElementById("processo").value;
+
+		  text.value=select.value;
+		  
+
+	}
+	
+	function bancoGetValue() {
+		  var text = document.getElementById("valueBanco");
+		  var select= document.getElementById("banco");
+		  
+		  
+		  text.value=select.value;
+
+	}
+	
+	function cicloGetValue() {
+		  var text = document.getElementById("valueCiclo");
+		  var select= document.getElementById("ciclo");
+			var option = document.getElementById("dataref").value;
+		  
+		  if(option != "DT_MES_FTRA"){
+	            document.getElementById("ciclo").style.visibility ="hidden";
+	        }
+	        if(option == "DT_MES_FTRA"){
+	        	document.getElementById("ciclo").style.visibility ="visible";
+	        }
+		  
+		  
+		  text.value=select.value;
+
+	}
+	
+	function datarefGetValue() {
+		  var text = document.getElementById("valueDataRef");
+		  var select= document.getElementById("dataref");
+		  var option = document.getElementById("dataref").value;
+		  
+		  if(option != "DT_MES_FTRA"){
+	            document.getElementById("divCiclo").style.visibility ="hidden";
+	        }
+	        if(option == "DT_MES_FTRA"){
+	        	document.getElementById("divCiclo").style.visibility ="visible";
+	        }
+		  
+		  
+			  text.value=select.value;
+	}
+	
+
+	function cadastrar(event) {
+		
+		if(document.getElementById('owner').value == "" || document.getElementById('tabela').value == ""){
+			alert('Preencha todos os campos.');
+		}else{
+			document.getElementById("formparametros").submit();
+		    alert('Cadastrado com Sucesso.');
+		}
+
+	    
+
+	}
+	
+
+		
+	</script>
+		
+		<title>Parametrizacao DataQuality</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+		
+		<img id="Cab" src="img/Cabecalho.png" width="100%"/>
+
+	</head>
+	
+		<style>
+		
+		
+			@font-face{
+    		font-family: "Vivo"
+    		url("vivo-regular-webfont.ttf") format("truetype");
+    	}
+    	.vivo-font{
+    	font-family: "Vivo";
+
+       } 
+
+
+      .box-body {
+		margin:10px;
+		margin-top: 10px;
+		background-color: white;
+		border-style: solid;
+    	border-width: 3px;
+		border-color: #D5D5D5;
+   	    padding: 10px;
+		}
+
+		.footer {
+    		bottom:-6%;
+    		position:absolute;
+     		align:right; 
+     		width: 20px;
+    	}
+    	
+    	.form-style-8{
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 1240px;
+	padding: 25px;
+	position: absolute;
+	background: #FFFFFF;
+	color: #3A2B81;
+	font-weight: bold;
+	margin: 26px;
+	margin-bottom:4px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+
+
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	width: 18%;
+	font-weight: bold;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 40px;
+	font: 14px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+
+.form-style-8 button, 
+.form-style-8 button{
+	-moz-box-shadow: inset 0px 1px 0px 0px #3A2B81;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #3A2B81;
+	box-shadow: inset 0px 1px 0px 0px #3A2B81;
+	background-color: #3A2B81;
+	border: 1px solid #3A2B81;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 13px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.form-style-8 button:hover, 
+.form-style-8 button:hover {
+	background:linear-gradient(to bottom, #34CACA 5%, #3A2B81 100%);
+	background-color:#34CACA;
+}
+
+hr{
+  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	width: 100%;
+	font-weight: bold;
+	padding: 1px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 1px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 10px;  
+}
+
+h1 {
+		top:-3.5%;
+    		position:absolute;
+    		align: rigth;
+    		width:100%;
+    		heigth=300;
+    background-color: #3A2B81;
+}
+		
+		
+		</style>
+
+		
+		<body style="background-color: #F9F9F9">
+		
+
+			<div class="form-style-8">
+			
+			<section>
+			<form class="form-inline" id="formparametros" action="Parametros" method="post"> 
+			
+			<input type="text" hidden="true" id="valueprocesso" name="processo" value="VALIDAÇÃO DATA MÓVEL">
+			<input type="text" hidden="true" id="valueBanco" name="banco" value="TERADATA">
+			
+			<form>
+				BANCO:
+				<select class="form-control inputCad" id="banco" onchange="bancoGetValue()" >
+					<option value="TERADATA">TERADATA</option>
+					<option value="SQL">SQL</option>
+					<option value="ORACLE">ORACLE</option>
+				</select>
+
+				
+				OWNER:
+				<input  type="text" id="owner" name="owner" style="text-transform:uppercase;" required>
+				
+				TABELA:
+				<input  type="text" id="tabela" name="tabela" style="text-transform:uppercase;" required>
+                
+				PROCESSO:
+				<select  class="form-control inputCad" id="processo"  onchange="processoNameGetValue()" >
+					<option value="VALIDAÇÃO DATA MÓVEL">VALIDAÇÃO DATA MÓVEL</option>
+					<option value="VALIDAÇÃO DATA FIXA">VALIDAÇÃO DATA FIXA</option>
+				</select> 
+
+					DATA REFERENCIA:
+					<select  class="form-control inputCad" id="dataref" onchange="datarefGetValue()">
+					<option value="DT_FOTO">DT_FOTO</option>
+					<option value="DT_ATLZ_DW">DT_ATLZ_DW</option>
+					<option value="DT_INSR_DW">DT_INSR_DW</option>
+					<option value="ID_DIA">ID_DIA</option>
+					<option value="DT_CHAMADA">DT_CHAMADA</option>
+					<option value="DT_MES_FTRA">DT_MES_FTRA</option>
+					<option value="DT_RFRA">DT_RFRA</option>
+				</select>
+				<input type="text" hidden="true" id="valueDataRef" name="dataref" value="DT_FOTO">
+				
+				<div id="divCiclo" style="margin-left:400px; margin-top:-84px; visibility:hidden">
+				 ID CICLO:
+				<select  class="form-control inputCad" id="ciclo"  onchange="cicloGetValue()" >
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+					<option value="20">20</option>
+					<option value="25">25</option>
+					<option value="30">30</option>
+				</select> 
+				<input type="text" hidden="true" id="valueCiclo" name="ciclo" value="5">
+				</div>
+				<div style="margin-left:1005px; margin-top:-84px; max-width: 300px;">
+				% DESVIO:
+				<input type="number"  id="desvio" name="desvio" value="5" style="width: 110px;">
+				</div>
+			<hr>
+			</br>
+			<button id="gravar" type="button"  class= "btn-default btn_sub" onClick="cadastrar()" style="margin-left:35%; color: #3A2B81; background-color: white; border: 1px solid white; box-shadow: inset 0px 1px 0px 0px white;">GRAVAR</button>
+			<button type="reset"  style="margin-left:5%;">LIMPAR</button>
+			
+
+			
+	<br/><br/>
+				</form>
+				</form>
+				</section>
+			</div>
+		
+			
+
+			<div class="footer">
+			<img id="Cab" src="img/Rod.png"/>
+		   	</div>
+			
+
+		</body>
+</html>
