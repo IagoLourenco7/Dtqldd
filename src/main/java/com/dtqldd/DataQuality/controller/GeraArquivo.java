@@ -43,7 +43,7 @@ public class GeraArquivo {
      		FileWriter arq = new FileWriter("d:\\teste_iago.txt",true);
      		
      		PrintWriter gravarArq = new PrintWriter(arq);
-     	    gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+';'+processo+";"+dataref+";"+""+";"+Double.toString(desvio/100));
+     	    gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+';'+processo+";"+Double.toString(desvio/100)+";"+dataref+";"+"");
      	    arq.close();
  			
  		}
