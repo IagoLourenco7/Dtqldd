@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+	<head>
+	
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+		<style>
+			 .box-body {
+		margin:280px;
+		width: 300px;
+		height:300px;
+		margin-top: 15px;
+		background-color: white;
+   	    padding: 5px;
+		}
+		
+		
+		 .box-body-second {
+		margin:470px;
+		width: 300px;
+		height:400px;
+		margin-top: -501px;
+		background-color: white;
+		border-style: solid;
+    	border-width: 3px;
+		border-color: #D5D5D5;
+   	    padding: 10px;
+		}
+		
+		
+		 .box-body-third {
+		margin:865px;
+		width: 300px;
+		height:400px;
+		margin-top: -895px;
+		background-color: white;
+		border-style: solid;
+    	border-width: 3px;
+		border-color: #D5D5D5;
+   	    padding: 10px;
+		}
+		
+		* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 10px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+ 
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: white;
+  margin-left: 20px;
+
+
+}
+		
+/* 		.footer { */
+/*     		bottom:-12%; */
+/*     		position:absolute; */
+/*      		align:left;  */
+/*      		width: 5px; */
+/*      		margin-left:-225px; */
+/*     	} */
+    	
+    			.footer {
+    		bottom:1.15%;
+    		position:absolute;
+    		width:98.85%;
+    		height:50;
+     		margin-left: -218.5px; 
+    	}
+		
+		.form-style-8 button, 
+		.form-style-8 button{
+			-moz-box-shadow: inset 0px 0px 0px 0px #D5D5D5;
+			-webkit-box-shadow: inset 0px 0px 0px 0px #D5D5D5;
+			box-shadow: inset 0px 0px 0px 0px #D5D5D5;
+			background-color: white;
+			border: 2px solid #D5D5D5;
+			display: inline-block;
+			cursor: pointer;
+			color: #3A2B81;
+			font-family: Arial;
+			font-size: 12px;
+			font-weight: bold;
+			padding: 10px 25px;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+		.form-style-8 button:hover, 
+		.form-style-8 button:hover {
+			background:linear-gradient(to bottom, #34CACA 5%, #3A2B81 100%);
+			background-color:#34CACA;
+		}
+		
+		hr{
+  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	width: 100%;
+	font-weight: bold;
+	padding: 1px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 1px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 10px;  
+}
+		
+		
+		</style>
+		
+		<img id="CabInd" src="img/cab_index.png" width="100%"/>
+		
+	</head>
+		<body style="background-color: #F9F9F9">
+		<div class="form-style-8">
+
+
+<!-- DIV TERADATA-->
+  <div class="row" style= "margin-left:225px;">
+  <div class="column">
+    <div class="card">
+    <div style="border-style: solid;border-width: 1px; border-color: #D5D5D5; padding: 10px;">
+    <img src="img/Teradata_logo-two_color.png" alt="Teradata">
+    <hr>
+      <a href="/parammovel"><button>MOVEL</button></a>
+      <br>
+       <br>
+      <a href="/paramfixa"><button>&nbsp;&nbsp;&nbsp;FIXA&nbsp;&nbsp;</button></a>
+      <br>
+      <br>
+      <a href="/"><button>Qualitativo</button></a>
+      <br>
+      </div>
+    </div>
+  </div>
+
+
+<!-- DIV ORACLE-->
+  <div class="row">
+  <div class="column">
+    <div class="card">
+    <div style="border-style: solid;border-width: 1px; border-color: #D5D5D5; padding: 10px;">
+     <br>
+    <img src="img/sig-color-wbg.png" alt="Oracle">
+     <br>
+      <br>
+    <hr>
+    <br>
+    <a href="/quali"><button>Quantitativo</button></a>
+     <br>
+     <br>
+      <a href="/"><button>Qualitativo</button></a>
+       <br>
+       <br>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- DIV SQL-->
+  <div class="row">
+  <div class="column">
+    <div class="card">
+    <div style="border-style: solid;border-width: 1px; border-color: #D5D5D5; padding: 10px;">
+     <br>
+    <img src="img/group 40.png" alt="Sql">
+     <br>
+    <hr>
+    <br>
+    <a href="/quali"><button>Quantitativo</button></a>
+     <br>
+     <br>
+      <a href="/"><button>Qualitativo</button></a>
+       <br>
+      <br>
+      </div>
+    </div>
+  </div>
+  	
+  </div>
+  			
+  		<br>
+		<hr style="margin-left:-200px;width: 1300px" />
+		<img src="img/group 41.png" alt="d" style="margin-left: 890px"><p  style="color:#382A7F;margin-left: 900px;margin-top: -20px;font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;Dúvidas? Acesse o <a style="color:#382A7F;align: left;font-size: 12px;" href="http://10.27.16.47:8000/biwiki/​">BI WIKI</a>
+		</div>
+	
+		
+<!-- 		<div class="footer"> -->
+<!-- 			<img id="Cab" src="img/Rod.png"/> -->
+<!-- 		   	</div> -->
+		   	
+		<div class="footer">
+		   <table width="100%" height="50" style="background-color: #3A2A80;">
+		   <tr>
+			<th><span class="vivo-font" style="color: #FFFFFF; margin:35px;margin-left:1100px; font-size: 30px;"><img id="Cab" src="img/Roda.png"/></span></th>
+		   </tr>
+			</table>
+			</div>
+		
+		
+		</body>
+</html>

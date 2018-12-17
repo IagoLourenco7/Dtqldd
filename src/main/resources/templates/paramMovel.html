@@ -12,9 +12,15 @@
 		  var text = document.getElementById("valueprocesso");
 		  var select= document.getElementById("processo");
 		  var option = document.getElementById("processo").value;
+		  
+		  if(option != "SVA_PRCR" && option != "PRQE_MVEL" && option != "TRFG_VLRD"){
+	            document.getElementById("agrupador").style.visibility ="hidden";
+	        }
+	        if(option == "SVA_PRCR" || option == "PRQE_MVEL" || option == "TRFG_VLRD"){
+	        	document.getElementById("agrupador").style.visibility ="visible";
+	        }
 
 		  text.value=select.value;
-		  
 
 	}
 	
@@ -48,14 +54,7 @@
 		  var text = document.getElementById("valueDataRef");
 		  var select= document.getElementById("dataref");
 		  var option = document.getElementById("dataref").value;
-		  
-		  if(option != "DT_MES_FTRA"){
-	            document.getElementById("divCiclo").style.visibility ="hidden";
-	        }
-	        if(option == "DT_MES_FTRA"){
-	        	document.getElementById("divCiclo").style.visibility ="visible";
-	        }
-		  
+		    
 		  
 			  text.value=select.value;
 	}
@@ -63,7 +62,7 @@
 
 	function cadastrar(event) {
 		
-		if(document.getElementById('owner').value == "" || document.getElementById('tabela').value == ""){
+		if(document.getElementById('owner').value == "" || document.getElementById('tabela').value == "" || (document.getElementById("agrupador").style.visibility =="visible" && document.getElementById('agroup').value == "")){
 			alert('Preencha todos os campos.');
 		}else{
 			document.getElementById("formparametros").submit();
@@ -111,11 +110,19 @@
    	    padding: 10px;
 		}
 
-		.footer {
-    		bottom:-6%;
+/* 		.footer { */
+/*     		bottom:-11%; */
+/*     		position:absolute; */
+/*      		align:right;  */
+/*      		width: 20px; */
+/*     	} */
+
+    			.footer {
+    		bottom:1.15%;
     		position:absolute;
-     		align:right; 
-     		width: 20px;
+    		width:98.85%;
+    		height:50;
+/*     		margin-left: -225px; */
     	}
     	
     	.form-style-8{
@@ -219,18 +226,19 @@ h1 {
 			<div class="form-style-8">
 			
 			<section>
-			<form class="form-inline" id="formparametros" action="Parametros" method="post"> 
+			<form class="form-inline" id="formparametros" action="ParametrosMovel" method="post"> 
 			
 			<input type="text" hidden="true" id="valueprocesso" name="processo" value="MOVEL">
-			<input type="text" hidden="true" id="valueBanco" name="banco" value="TERADATA">
+<!-- 			<input type="text" hidden="true" id="valueBanco" name="banco" value="TERADATA" disabled="disabled"> -->
 			
 			<form>
 				BANCO:
-				<select class="form-control inputCad" id="banco" onchange="bancoGetValue()" >
-					<option value="TERADATA">TERADATA</option>
-					<option value="SQL">SQL</option>
-					<option value="ORACLE">ORACLE</option>
-				</select>
+				<input type="text"  id="valueBanco" name="banco" value="TERADATA" readonly="readonly">
+<!-- 				<select class="form-control inputCad" id="banco" onchange="bancoGetValue()" > -->
+<!-- 					<option value="TERADATA">TERADATA</option> -->
+<!-- 					<option value="SQL">SQL</option> -->
+<!-- 					<option value="ORACLE">ORACLE</option> -->
+<!-- 				</select> -->
 
 				
 				OWNER:
@@ -242,11 +250,14 @@ h1 {
 				PROCESSO:
 				<select  class="form-control inputCad" id="processo"  onchange="processoNameGetValue()" >
 					<option value="MOVEL">MOVEL</option>
-					<option value="FIXA">FIXA</option>
+					<option value="FTRM_MVEL">FATURAMENTO</option>
+					<option value="SVA_PRCR">SVA PARCEIRO</option>
+					<option value="PRQE_MVEL">PARQUE</option>
+					<option value="TRFG_VLRD">TRÁFEGO VALORADO</option>
 				</select> 
 
 					DATA REFERENCIA:
-					<select  class="form-control inputCad" id="dataref" onchange="datarefGetValue()">
+					<select class="form-control inputCad" id="dataref" onchange="datarefGetValue()">
 					<option value="DT_FOTO">DT_FOTO</option>
 					<option value="DT_ATLZ_DW">DT_ATLZ_DW</option>
 					<option value="DT_INSR_DW">DT_INSR_DW</option>
@@ -254,27 +265,47 @@ h1 {
 					<option value="DT_CHAMADA">DT_CHAMADA</option>
 					<option value="DT_MES_FTRA">DT_MES_FTRA</option>
 					<option value="DT_RFRA">DT_RFRA</option>
+					<option value="ID_MES">ID_MES</option>
+					<option value="ANO_MES_CNTA">ANO_MES_CNTA</option>
+					<option value="DT_ABRT_SSSO">DT_ABRT_SSSO</option>
+					<option value="DT_ALTR_STTS">DT_ALTR_STTS</option>
+					<option value="DT_ATVC_SRVC">DT_ATVC_SRVC</option>
+					<option value="DT_CDST">DT_CDST</option>
+					<option value="DT_CHMD">DT_CHMD</option>
+					<option value="DT_DIA">DT_DIA</option>
+					<option value="DT_ENVO_MNSG">DT_ENVO_MNSG</option>
+					<option value="DT_FOTO_ESTQ">DT_FOTO_ESTQ</option>
+					<option value="DT_FOTO_LNHA">DT_FOTO_LNHA</option>
+					<option value="DT_FOTO_MVMT_SLDO">DT_FOTO_MVMT_SLDO</option>
+					<option value="DT_FOTO_SLDO">DT_FOTO_SLDO</option>
+					<option value="DT_HR_VGNC_INCL_CLI">DT_HR_VGNC_INCL_CLI</option>
+					<option value="DT_INI_SSSO">DT_INI_SSSO</option>
+					<option value="DT_INSR_DW">DT_INSR_DW</option>
+					<option value="DT_MVMT_LNHA">DT_MVMT_LNHA</option>
+					<option value="DT_ORGN">DT_ORGN</option>
+					<option value="DT_RCRG">DT_RCRG</option>
+					<option value="DT_RFRN">DT_RFRN</option>
+					<option value="DT_RFRN_PTCL">DT_RFRN_PTCL</option>
+					<option value="DT_VGNC_INCL">DT_VGNC_INCL</option>
 				</select>
 				<input type="text" hidden="true" id="valueDataRef" name="dataref" value="DT_FOTO">
 				
-				<div id="divCiclo" style="margin-left:400px; margin-top:-84px; visibility:hidden">
-				 ID CICLO:
-				<select  class="form-control inputCad" id="ciclo"  onchange="cicloGetValue()" >
-					<option value="5">5</option>
-					<option value="10">10</option>
-					<option value="15">15</option>
-					<option value="20">20</option>
-					<option value="25">25</option>
-					<option value="30">30</option>
-				</select> 
-				<input type="text" hidden="true" id="valueCiclo" name="ciclo" value="5">
+				<div id="agrupador" style="margin-left:599px; margin-top:-84px;max-width: 1000px; visibility: hidden;">
+				AGRUPADOR:
+				<input  type="text"  id="agroup" name="agroup" style="text-transform:uppercase;" required>
 				</div>
-				<div style="margin-left:1005px; margin-top:-84px; max-width: 300px;">
+				<div style="margin-left:905px; margin-top:-84px; max-width: 300px;">
+				SLA:
+				<input type="number"  id="sla" name="sla" value="2" style="width: 70px;">
+				</div>
+				<div style="margin-left:1045px; margin-top:-84px; max-width: 300px;">
 				% DESVIO:
-				<input type="number"  id="desvio" name="desvio" value="5" style="width: 110px;">
+				<input type="number"  id="desvio" name="desvio" value="5" style="width: 70px;">
 				</div>
 			<hr>
-			</br>
+			<a href= "/">
+			<img id="voltar" src="img/voltar.jpg" width= 70px/>
+			</a>
 			<button id="gravar" type="button"  class= "btn-default btn_sub" onClick="cadastrar()" style="margin-left:35%; color: #3A2B81; background-color: white; border: 1px solid white; box-shadow: inset 0px 1px 0px 0px white;">GRAVAR</button>
 			<button type="reset"  style="margin-left:5%;">LIMPAR</button>
 			
@@ -288,9 +319,17 @@ h1 {
 		
 			
 
-			<div class="footer">
-			<img id="Cab" src="img/Rod.png"/>
-		   	</div>
+<!-- 			<div class="footer"> -->
+<!-- 			<img id="Cab" src="img/Rod.png"/> -->
+<!-- 		   	</div> -->
+		   	
+		   			<div class="footer">
+		   <table width="100%" height="50" style="background-color: #3A2A80;">
+		   <tr>
+			<th align="right" ><span class="vivo-font" style="color: #FFFFFF; margin:35px; font-size: 30px;"><img id="Cab" src="img/Roda.png"/></span></th>
+		   </tr>
+			</table>
+			</div>
 			
 
 		</body>
