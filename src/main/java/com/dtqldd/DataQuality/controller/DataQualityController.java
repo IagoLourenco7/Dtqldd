@@ -16,18 +16,15 @@ public class DataQualityController {
 	        return "paramFixa";
 	    }
 	
-		@RequestMapping("/")
+		@RequestMapping("/dataquality/")
 	    public String index(){
 	        return "index";
 	    }
 		
-		@RequestMapping("/quali")
-	    public String quali(){
-	        return "index_teste";
+		@RequestMapping("/paramoracle")
+	    public String ParamOracle(){
+	        return "paramoracle";
 	    }
 		
-		@RequestMapping("/qua")
-	    public String qual(){
-	        return "teste_index";
-	    }
+
 }

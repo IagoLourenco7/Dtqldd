@@ -223,14 +223,14 @@ h1 {
 			<div class="form-style-8">
 			
 			<section>
-			<form class="form-inline" id="formparametros" action="ParametrosFixa" method="post"> 
+			<form class="form-inline" id="formparametros" action="parametrosOracle" method="post"> 
 			
-			<input type="text" hidden="true" id="valueprocesso" name="processo" value="FIXA">
+			<input type="text" hidden="true" id="valueprocesso" name="processo" value="MVEL_ORCLE">
 <!-- 			<input type="text" hidden="true" id="valueBanco" name="banco" value="TERADATA" disabled="disabled"> -->
 			
 			<form>
 				BANCO:
-				<input type="text"  id="banco" name="banco" value="TERADATA" readonly="readonly">
+				<input type="text"  id="banco" name="banco" value="ORACLE" readonly="readonly">
 <!-- 				<SELECT CLASS="FORM-CONTROL INPUTCAD" ID="BANCO" ONCHANGE="BANCOGETVALUE()" DISABLED="DISABLED" > -->
 <!-- 					<OPTION VALUE="TERADATA">TERADATA</OPTION> -->
 <!-- 					<OPTION VALUE="SQL">SQL</OPTION> -->
@@ -247,8 +247,8 @@ h1 {
                 
 				PROCESSO:
 				<select  class="form-control inputCad" id="processo"  onchange="processoNameGetValue()" >
-					<option value="FIXA">FIXA</option>
-					<option value="FTRM_FIXA">FATURAMENTO</option>
+					<option value="MVEL_ORCLE">MOVEL</option>
+					<option value="FTRM_MOVEL">FATURAMENTO</option>
 				</select> 
 				
 				<input  type="text" hidden="true" id="agroup" name="agroup" style="text-transform:uppercase;">
@@ -284,6 +284,10 @@ h1 {
 					<option value="DT_RFRN">DT_RFRN</option>
 					<option value="DT_RFRN_PTCL">DT_RFRN_PTCL</option>
 					<option value="DT_VGNC_INCL">DT_VGNC_INCL</option>
+					
+					<option value="CREATED">CREATED</option>
+					<option value="SRLB_DATE_CREATED">SRLB_DATE_CREATED</option>
+					<option value="SRFT_DATE_CREATED">SRFT_DATE_CREATED</option>
 				</select>
 				<input type="text" hidden="true" id="valueDataRef" name="dataref" value="DT_FOTO">
 
