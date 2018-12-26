@@ -26,5 +26,10 @@ public class DataQualityController {
 	        return "paramoracle";
 	    }
 		
+		@RequestMapping("/teraquali")
+	    public String testeQuali(){
+	        return "teraQuali";
+	    }
+		
 
 }
