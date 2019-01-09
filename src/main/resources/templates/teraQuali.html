@@ -48,10 +48,8 @@
 
 	function cadastrar(event) {
 		
-		if(document.getElementById('owner').value == "" || document.getElementById('tabela').value == ""){
+		if(document.getElementById('owner').value == "" || document.getElementById('tabela').value == "" || document.getElementById('campo').value == ""){
 			alert('Preencha todos os campos.');
-		}else if (document.getElementById('campo1').value == "" && document.getElementById('campo2').value == "" && document.getElementById('campo3').value == "" && document.getElementById('campo4').value == ""){
-			alert('Preencha ao menos 1 campo para regra qualitativa.');
 		}else{
 			document.getElementById("formparametros").submit();
 		    alert('Cadastrado com Sucesso.');
@@ -150,7 +148,7 @@
 	border: none;
 	border-bottom: 1px solid #ddd;
 	background: transparent;
-	margin-bottom: 20px;
+	margin-bottom: 60px;
 	font: 14px Arial, Helvetica, sans-serif;
 	height: 45px;
 }
@@ -268,19 +266,17 @@ h1 {
 				</select>
 				<input type="text" hidden="true" id="valueDataRef" name="dataref" value="DT_FOTO">
 				
-				CAMPO1:
-				<input type="text"  id="campo1" name="campo1" style="text-transform:uppercase;">
-				CAMPO2:
-				<input type="text"  id="campo2" name="campo2" style="text-transform:uppercase;">
-				CAMPO3:
-				<input type="text"  id="campo3" name="campo3" style="text-transform:uppercase;">
-				CAMPO4:
-				<input type="text"  id="campo4" name="campo4" style="text-transform:uppercase;">
-
-				<div style="margin-left:530px;">
+				CONDICAO:
+					<select class="form-control inputCad" id="" onchange="" style="width: 170px;">
+					<option value="COUNT">COUNT</option>
+				</select>
+				CAMPO:
+				<input type="text"  id="campo" name="campo" style="text-transform:uppercase;">
+				
+<!-- 				<div style="margin-left:530px;"> -->
 				SLA:
 				<input type="number"  id="sla" name="sla" value="2" style="width: 70px;">
-				</div>
+<!-- 				</div> -->
 
 			<hr style="margin-top: -10px">
 			<a href= "/dataquality">
