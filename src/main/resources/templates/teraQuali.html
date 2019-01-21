@@ -19,31 +19,31 @@
 
 	}
 	
-	function cicloGetValue() {
-		  var text = document.getElementById("valueCiclo");
-		  var select= document.getElementById("ciclo");
-			var option = document.getElementById("dataref").value;
+// 	function cicloGetValue() {
+// 		  var text = document.getElementById("valueCiclo");
+// 		  var select= document.getElementById("ciclo");
+// 			var option = document.getElementById("dataref").value;
 		  
-		  if(option != "DT_MES_FTRA"){
-	            document.getElementById("ciclo").style.visibility ="hidden";
-	        }
-	        if(option == "DT_MES_FTRA"){
-	        	document.getElementById("ciclo").style.visibility ="visible";
-	        }
+// 		  if(option != "DT_MES_FTRA"){
+// 	            document.getElementById("ciclo").style.visibility ="hidden";
+// 	        }
+// 	        if(option == "DT_MES_FTRA"){
+// 	        	document.getElementById("ciclo").style.visibility ="visible";
+// 	        }
 		  
 		  
-		  text.value=select.value;
+// 		  text.value=select.value;
 
-	}
+// 	}
 	
-	function datarefGetValue() {
-		  var text = document.getElementById("valueDataRef");
-		  var select= document.getElementById("dataref");
-		  var option = document.getElementById("dataref").value;
+// 	function datarefGetValue() {
+// 		  var text = document.getElementById("valueDataRef");
+// 		  var select= document.getElementById("dataref");
+// 		  var option = document.getElementById("dataref").value;
 		    
 		  
-			  text.value=select.value;
-	}
+// 			  text.value=select.value;
+// 	}
 	
 
 	function cadastrar(event) {
@@ -233,54 +233,58 @@ h1 {
 				<input  type="text" id="tabela" name="tabela" style="text-transform:uppercase;" required>
 
 					DATA REFERENCIA:
-					<select class="form-control inputCad" id="dataref" onchange="datarefGetValue()" style="width: 170px;">
-					<option value="DT_FOTO">DT_FOTO</option>
-					<option value="DT_ATLZ_DW">DT_ATLZ_DW</option>
-					<option value="DT_INSR_DW">DT_INSR_DW</option>
-					<option value="ID_DIA">ID_DIA</option>
-					<option value="DT_CHAMADA">DT_CHAMADA</option>
-					<option value="DT_MES_FTRA">DT_MES_FTRA</option>
-					<option value="DT_RFRA">DT_RFRA</option>
-					<option value="ID_MES">ID_MES</option>
-					<option value="ANO_MES_CNTA">ANO_MES_CNTA</option>
-					<option value="DT_ABRT_SSSO">DT_ABRT_SSSO</option>
-					<option value="DT_ALTR_STTS">DT_ALTR_STTS</option>
-					<option value="DT_ATVC_SRVC">DT_ATVC_SRVC</option>
-					<option value="DT_CDST">DT_CDST</option>
-					<option value="DT_CHMD">DT_CHMD</option>
-					<option value="DT_DIA">DT_DIA</option>
-					<option value="DT_ENVO_MNSG">DT_ENVO_MNSG</option>
-					<option value="DT_FOTO_ESTQ">DT_FOTO_ESTQ</option>
-					<option value="DT_FOTO_LNHA">DT_FOTO_LNHA</option>
-					<option value="DT_FOTO_MVMT_SLDO">DT_FOTO_MVMT_SLDO</option>
-					<option value="DT_FOTO_SLDO">DT_FOTO_SLDO</option>
-					<option value="DT_HR_VGNC_INCL_CLI">DT_HR_VGNC_INCL_CLI</option>
-					<option value="DT_INI_SSSO">DT_INI_SSSO</option>
-					<option value="DT_INSR_DW">DT_INSR_DW</option>
-					<option value="DT_MVMT_LNHA">DT_MVMT_LNHA</option>
-					<option value="DT_ORGN">DT_ORGN</option>
-					<option value="DT_RCRG">DT_RCRG</option>
-					<option value="DT_RFRN">DT_RFRN</option>
-					<option value="DT_RFRN_PTCL">DT_RFRN_PTCL</option>
-					<option value="DT_VGNC_INCL">DT_VGNC_INCL</option>
-				</select>
-				<input type="text" hidden="true" id="valueDataRef" name="dataref" value="DT_FOTO">
+<!-- 					<select class="form-control inputCad" id="dataref" onchange="datarefGetValue()" style="width: 170px;"> -->
+<!-- 					<option value="DT_FOTO">DT_FOTO</option> -->
+<!-- 					<option value="DT_ATLZ_DW">DT_ATLZ_DW</option> -->
+<!-- 					<option value="DT_INSR_DW">DT_INSR_DW</option> -->
+<!-- 					<option value="ID_DIA">ID_DIA</option> -->
+<!-- 					<option value="DT_CHAMADA">DT_CHAMADA</option> -->
+<!-- 					<option value="DT_MES_FTRA">DT_MES_FTRA</option> -->
+<!-- 					<option value="DT_RFRA">DT_RFRA</option> -->
+<!-- 					<option value="ID_MES">ID_MES</option> -->
+<!-- 					<option value="ANO_MES_CNTA">ANO_MES_CNTA</option> -->
+<!-- 					<option value="DT_ABRT_SSSO">DT_ABRT_SSSO</option> -->
+<!-- 					<option value="DT_ALTR_STTS">DT_ALTR_STTS</option> -->
+<!-- 					<option value="DT_ATVC_SRVC">DT_ATVC_SRVC</option> -->
+<!-- 					<option value="DT_CDST">DT_CDST</option> -->
+<!-- 					<option value="DT_CHMD">DT_CHMD</option> -->
+<!-- 					<option value="DT_DIA">DT_DIA</option> -->
+<!-- 					<option value="DT_ENVO_MNSG">DT_ENVO_MNSG</option> -->
+<!-- 					<option value="DT_FOTO_ESTQ">DT_FOTO_ESTQ</option> -->
+<!-- 					<option value="DT_FOTO_LNHA">DT_FOTO_LNHA</option> -->
+<!-- 					<option value="DT_FOTO_MVMT_SLDO">DT_FOTO_MVMT_SLDO</option> -->
+<!-- 					<option value="DT_FOTO_SLDO">DT_FOTO_SLDO</option> -->
+<!-- 					<option value="DT_HR_VGNC_INCL_CLI">DT_HR_VGNC_INCL_CLI</option> -->
+<!-- 					<option value="DT_INI_SSSO">DT_INI_SSSO</option> -->
+<!-- 					<option value="DT_INSR_DW">DT_INSR_DW</option> -->
+<!-- 					<option value="DT_MVMT_LNHA">DT_MVMT_LNHA</option> -->
+<!-- 					<option value="DT_ORGN">DT_ORGN</option> -->
+<!-- 					<option value="DT_RCRG">DT_RCRG</option> -->
+<!-- 					<option value="DT_RFRN">DT_RFRN</option> -->
+<!-- 					<option value="DT_RFRN_PTCL">DT_RFRN_PTCL</option> -->
+<!-- 					<option value="DT_VGNC_INCL">DT_VGNC_INCL</option> -->
+<!-- 				</select> -->
+				<input type="text" id="valueDataRef" name="dataref" style="width: 170px;text-transform:uppercase;">
 				
 				CONDICAO:
-					<select class="form-control inputCad" id="" onchange="" style="width: 170px;">
-					<option value="COUNT">COUNT</option>
-				</select>
+				<input type="text" id="cond" name="cond" style="text-transform:uppercase;">
+<!-- 					<select class="form-control inputCad" id="" onchange="" style="width: 170px;"> -->
+<!-- 					<option value="COUNT">COUNT</option> -->
+<!-- 				</select> -->
 				CAMPO:
 				<input type="text"  id="campo" name="campo" style="text-transform:uppercase;">
 				
 <!-- 				<div style="margin-left:530px;"> -->
 				SLA:
 				<input type="number"  id="sla" name="sla" value="2" style="width: 70px;">
+				
+				OBJETIVO:
+				<input type="text"  id="objetivo" name="objetivo" style="text-transform:uppercase;">
 <!-- 				</div> -->
 
 			<hr style="margin-top: -10px">
 			<a href= "/dataquality">
-			<img id="voltar" src="img/voltar.jpg" width= 70px/>
+			<img id="voltar" src="img/voltar.png"/>
 			</a>
 			<button id="gravar" type="button"  class= "btn-default btn_sub" onClick="cadastrar()" style="margin-left:35%; color: #3A2B81; background-color: white; border: 1px solid white; box-shadow: inset 0px 1px 0px 0px white;">GRAVAR</button>
 			<button type="reset"  style="margin-left:5%;">LIMPAR</button>

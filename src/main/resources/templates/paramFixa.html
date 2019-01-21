@@ -27,31 +27,40 @@
 
 	}
 	
-	function cicloGetValue() {
-		  var text = document.getElementById("valueCiclo");
-		  var select= document.getElementById("ciclo");
-			var option = document.getElementById("dataref").value;
-		  
-		  if(option != "DT_MES_FTRA"){
-	            document.getElementById("ciclo").style.visibility ="hidden";
-	        }
-	        if(option == "DT_MES_FTRA"){
-	        	document.getElementById("ciclo").style.visibility ="visible";
-	        }
+	function moduloGetValue() {
+		  var text = document.getElementById("valuemodulo");
+		  var select= document.getElementById("modulo");
 		  
 		  
 		  text.value=select.value;
 
 	}
 	
-	function datarefGetValue() {
-		  var text = document.getElementById("valueDataRef");
-		  var select= document.getElementById("dataref");
-		  var option = document.getElementById("dataref").value;
+// 	function cicloGetValue() {
+// 		  var text = document.getElementById("valueCiclo");
+// 		  var select= document.getElementById("ciclo");
+// 			var option = document.getElementById("dataref").value;
+		  
+// 		  if(option != "DT_MES_FTRA"){
+// 	            document.getElementById("ciclo").style.visibility ="hidden";
+// 	        }
+// 	        if(option == "DT_MES_FTRA"){
+// 	        	document.getElementById("ciclo").style.visibility ="visible";
+// 	        }
+		  
+		  
+// 		  text.value=select.value;
+
+// 	}
+	
+// 	function datarefGetValue() {
+// 		  var text = document.getElementById("valueDataRef");
+// 		  var select= document.getElementById("dataref");
+// 		  var option = document.getElementById("dataref").value;
 		    
 		  
-			  text.value=select.value;
-	}
+// 			  text.value=select.value;
+// 	}
 	
 
 	function cadastrar(event) {
@@ -244,68 +253,86 @@ h1 {
 				
 				TABELA:
 				<input  type="text" id="tabela" name="tabela" style="text-transform:uppercase;" required>
-                
+                NM LOGICO:
+				<input type="text" id="nmlogico" name="nmlogico" style="text-transform:uppercase;">
 				PROCESSO:
 				<select  class="form-control inputCad" id="processo"  onchange="processoNameGetValue()" >
 					<option value="FIXA">FIXA</option>
 					<option value="FTRM_FIXA">FATURAMENTO</option>
-				</select> 
-				
-				<input  type="text" hidden="true" id="agroup" name="agroup" style="text-transform:uppercase;">
-
-					DATA REFERENCIA:
-					<select class="form-control inputCad" id="dataref" onchange="datarefGetValue()">
-					<option value="DT_FOTO">DT_FOTO</option>
-					<option value="DT_ATLZ_DW">DT_ATLZ_DW</option>
-					<option value="DT_INSR_DW">DT_INSR_DW</option>
-					<option value="ID_DIA">ID_DIA</option>
-					<option value="DT_CHAMADA">DT_CHAMADA</option>
-					<option value="DT_MES_FTRA">DT_MES_FTRA</option>
-					<option value="DT_RFRA">DT_RFRA</option>
-					<option value="ID_MES">ID_MES</option>
-					<option value="ANO_MES_CNTA">ANO_MES_CNTA</option>
-					<option value="DT_ABRT_SSSO">DT_ABRT_SSSO</option>
-					<option value="DT_ALTR_STTS">DT_ALTR_STTS</option>
-					<option value="DT_ATVC_SRVC">DT_ATVC_SRVC</option>
-					<option value="DT_CDST">DT_CDST</option>
-					<option value="DT_CHMD">DT_CHMD</option>
-					<option value="DT_DIA">DT_DIA</option>
-					<option value="DT_ENVO_MNSG">DT_ENVO_MNSG</option>
-					<option value="DT_FOTO_ESTQ">DT_FOTO_ESTQ</option>
-					<option value="DT_FOTO_LNHA">DT_FOTO_LNHA</option>
-					<option value="DT_FOTO_MVMT_SLDO">DT_FOTO_MVMT_SLDO</option>
-					<option value="DT_FOTO_SLDO">DT_FOTO_SLDO</option>
-					<option value="DT_HR_VGNC_INCL_CLI">DT_HR_VGNC_INCL_CLI</option>
-					<option value="DT_INI_SSSO">DT_INI_SSSO</option>
-					<option value="DT_INSR_DW">DT_INSR_DW</option>
-					<option value="DT_MVMT_LNHA">DT_MVMT_LNHA</option>
-					<option value="DT_ORGN">DT_ORGN</option>
-					<option value="DT_RCRG">DT_RCRG</option>
-					<option value="DT_RFRN">DT_RFRN</option>
-					<option value="DT_RFRN_PTCL">DT_RFRN_PTCL</option>
-					<option value="DT_VGNC_INCL">DT_VGNC_INCL</option>
 				</select>
-				<input type="text" hidden="true" id="valueDataRef" name="dataref" value="DT_FOTO">
+				MODULO:
+				<input  type="text" hidden="true" id="valuemodulo" name="modulo" value="Planta de Voz">
+				<select class="form-control inputCad" id="modulo" onchange="moduloGetValue()">
+					<option value="Planta de Voz">PLANTA DE VOZ</option>
+					<option value="Planta de Banda Larga">PLANTA DE BANDA LARGA</option>
+					<option value="Planta de TV Vivo 2">PLANTA DE TV VIVO 2</option>
+					<option value="Planta de TV Vivo 1">PLANTA DE TV VIVO 1</option>
+					<option value="Planta de plano">PLANTA DE PLANO</option>
+					<option value="Planta de SVA">PLANTA DE SVA</option>
+					<option value="Divida">DIVIDA</option>
+					<option value="Atendimento">ATENDIMENTO</option>
+					<option value="Movimento Finalizado">MOVIMENTO FINALIZADO</option>
+					<option value="Movimento">MOVIMENTO</option>
+					<option value="Faturamento">FATURAMENTO</option>
+					<option value="Trafego">TRAFEGO</option>
+					<option value="Radious">RADIOUS</option>
+ 				</select> 
 
-				<div style="margin-left:905px; margin-top:-84px; max-width: 300px;">
+	
+				
+<!-- 				<input  type="text" hidden="true" id="agroup" name="agroup" style="text-transform:uppercase;"> -->
+					    DT REF:
+<!-- 					<select class="form-control inputCad" id="dataref" onchange="datarefGetValue()"> -->
+<!-- 					<option value="DT_FOTO">DT_FOTO</option> -->
+<!-- 					<option value="DT_ATLZ_DW">DT_ATLZ_DW</option> -->
+<!-- 					<option value="DT_INSR_DW">DT_INSR_DW</option> -->
+<!-- 					<option value="ID_DIA">ID_DIA</option> -->
+<!-- 					<option value="DT_CHAMADA">DT_CHAMADA</option> -->
+<!-- 					<option value="DT_MES_FTRA">DT_MES_FTRA</option> -->
+<!-- 					<option value="DT_RFRA">DT_RFRA</option> -->
+<!-- 					<option value="ID_MES">ID_MES</option> -->
+<!-- 					<option value="ANO_MES_CNTA">ANO_MES_CNTA</option> -->
+<!-- 					<option value="DT_ABRT_SSSO">DT_ABRT_SSSO</option> -->
+<!-- 					<option value="DT_ALTR_STTS">DT_ALTR_STTS</option> -->
+<!-- 					<option value="DT_ATVC_SRVC">DT_ATVC_SRVC</option> -->
+<!-- 					<option value="DT_CDST">DT_CDST</option> -->
+<!-- 					<option value="DT_CHMD">DT_CHMD</option> -->
+<!-- 					<option value="DT_DIA">DT_DIA</option> -->
+<!-- 					<option value="DT_ENVO_MNSG">DT_ENVO_MNSG</option> -->
+<!-- 					<option value="DT_FOTO_ESTQ">DT_FOTO_ESTQ</option> -->
+<!-- 					<option value="DT_FOTO_LNHA">DT_FOTO_LNHA</option> -->
+<!-- 					<option value="DT_FOTO_MVMT_SLDO">DT_FOTO_MVMT_SLDO</option> -->
+<!-- 					<option value="DT_FOTO_SLDO">DT_FOTO_SLDO</option> -->
+<!-- 					<option value="DT_HR_VGNC_INCL_CLI">DT_HR_VGNC_INCL_CLI</option> -->
+<!-- 					<option value="DT_INI_SSSO">DT_INI_SSSO</option> -->
+<!-- 					<option value="DT_INSR_DW">DT_INSR_DW</option> -->
+<!-- 					<option value="DT_MVMT_LNHA">DT_MVMT_LNHA</option> -->
+<!-- 					<option value="DT_ORGN">DT_ORGN</option> -->
+<!-- 					<option value="DT_RCRG">DT_RCRG</option> -->
+<!-- 					<option value="DT_RFRN">DT_RFRN</option> -->
+<!-- 					<option value="DT_RFRN_PTCL">DT_RFRN_PTCL</option> -->
+<!-- 					<option value="DT_VGNC_INCL">DT_VGNC_INCL</option> -->
+<!-- 				</select> -->
+				<input type="text" id="valueDataRef" name="dataref" style="text-transform:uppercase;"s>
+				
+				AGRUPADOR:
+				<input  type="text"  id="agroup" name="agroup" style="text-transform:uppercase;width: 180px;" required>
+
+				
 				SLA:
 				<input type="number"  id="sla" name="sla" value="2" style="width: 70px;">
-				</div>
-				<div style="margin-left:1045px; margin-top:-84px; max-width: 300px;">
+				
 				% DESVIO:
 				<input type="number"  id="desvio" name="desvio" value="5" style="width: 70px;">
-				</div>
+
 			<hr>
 			
 			<a href= "/dataquality">
-			<img id="voltar" src="img/voltar.jpg" width= 70px/>
+			<img id="voltar" src="img/voltar.png"/>
 			</a>
 			<button id="gravar" type="button"  class= "btn-default btn_sub" onClick="cadastrar()" style="margin-left:35%; color: #3A2B81; background-color: white; border: 1px solid white; box-shadow: inset 0px 1px 0px 0px white;">GRAVAR</button>
 			<button type="reset"  style="margin-left:5%;">LIMPAR</button>
-			
 
-			
-	<br/><br/>
 				</form>
 				</form>
 				</section>

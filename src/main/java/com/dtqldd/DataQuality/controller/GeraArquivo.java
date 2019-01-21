@@ -23,7 +23,9 @@ public class GeraArquivo {
 	    						 	@RequestParam("dataref") String dataref,
 	    						 	@RequestParam("desvio") double desvio,
 	    						 	@RequestParam("sla") int sla,
-	    						 	@RequestParam("agroup") String agrupador) throws IOException {
+	    						 	@RequestParam("agroup") String agrupador,
+	    						 	@RequestParam("modulo") String modulo,
+	    						 	@RequestParam("nmlogico") String nmLogico) throws IOException {
 
 	 SSHClient ssh = new SSHClient();
 	   ssh.addHostKeyVerifier(new PromiscuousVerifier());
@@ -39,12 +41,12 @@ public class GeraArquivo {
      		i++;
     		if(!agrupador.equals("")) {
      		PrintWriter gravarArq = new PrintWriter(arq);
-     		gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+";"+processo+";"+Integer.toString(sla)+";"+Double.toString(desvio)+";"+dataref+";"+agrupador+';'+i);
+     		gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+";"+processo.toUpperCase()+";"+Integer.toString(sla)+";"+Double.toString(desvio)+";"+dataref.toUpperCase()+";"+agrupador.toUpperCase()+';'+i+";"+modulo+";"+nmLogico.toUpperCase());
      	    arq.close();
     		}
     		if(agrupador.equals("")) {
          		PrintWriter gravarArq = new PrintWriter(arq);
-         		gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+";"+processo+";"+Integer.toString(sla)+";"+Double.toString(desvio)+";"+dataref+";"+"''"+';'+i);
+         		gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+";"+processo.toUpperCase()+";"+Integer.toString(sla)+";"+Double.toString(desvio)+";"+dataref.toUpperCase()+";"+"''"+';'+i+";"+modulo+";"+nmLogico.toUpperCase());
          	    arq.close();
         		}
     		
@@ -72,7 +74,9 @@ public class GeraArquivo {
 	    						     @RequestParam("dataref") String dataref,
 	    						     @RequestParam("desvio") double desvio,
 	    						     @RequestParam("sla") int sla,
-	    						     @RequestParam("agroup") String agrupador) throws IOException {
+	    						     @RequestParam("agroup") String agrupador,
+	    						     @RequestParam("modulo") String modulo,
+		    						 @RequestParam("nmlogico") String nmLogico) throws IOException {
 
 	 SSHClient ssh = new SSHClient();
 	   ssh.addHostKeyVerifier(new PromiscuousVerifier());
@@ -86,12 +90,12 @@ public class GeraArquivo {
   		i++;
  		if(!agrupador.equals("")) {
   		PrintWriter gravarArq = new PrintWriter(arq);
-  		gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+";"+processo+";"+Integer.toString(sla)+";"+Double.toString(desvio)+";"+dataref+";"+agrupador+';'+i);
+  		gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+";"+processo.toUpperCase()+";"+Integer.toString(sla)+";"+Double.toString(desvio)+";"+dataref.toUpperCase()+";"+agrupador.toUpperCase()+';'+i+";"+modulo+";"+nmLogico.toUpperCase());
   	    arq.close();
  		}
  		if(agrupador.equals("")) {
       		PrintWriter gravarArq = new PrintWriter(arq);
-      		gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+";"+processo+";"+Integer.toString(sla)+";"+Double.toString(desvio)+";"+dataref+";"+"''"+';'+i);
+      		gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+";"+processo.toUpperCase()+";"+Integer.toString(sla)+";"+Double.toString(desvio)+";"+dataref.toUpperCase()+";"+"''"+';'+i+";"+modulo+";"+nmLogico.toUpperCase());
       	    arq.close();
      		}
  		
@@ -164,7 +168,8 @@ public class GeraArquivo {
 	    						 	@RequestParam("owner") String owner,
 	    						 	@RequestParam("campo") String campo,
 	    						 	@RequestParam("dataref") String dataref,
-	    						 	@RequestParam("sla") int sla) throws IOException {
+	    						 	@RequestParam("sla") int sla,
+	    						 	@RequestParam("objetivo") String objetivo) throws IOException {
 
 
 
@@ -180,7 +185,7 @@ public class GeraArquivo {
 		i++;
 
 		PrintWriter gravarArq = new PrintWriter(arq);
-		gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+";"+campo.toUpperCase()+";"+Integer.toString(sla)+";"+dataref+';'+i);
+		gravarArq.println(banco+';'+tabela.toUpperCase()+';'+owner.toUpperCase()+";"+campo.toUpperCase()+";"+Integer.toString(sla)+";"+dataref.toUpperCase()+';'+i+";"+objetivo.toUpperCase());
 	    arq.close();
 
 
