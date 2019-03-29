@@ -42,6 +42,43 @@
 
 	}
 	
+	
+// 	function desabilita()
+// 	{
+// 		  var option = document.getElementById("calendario").value;
+		  
+// 		  if( option != "CICLO"){
+// 			  document.getElementById('campo').disabled=true;
+// 	      }
+// 	      if( option == "CICLO"){
+// 	    	  document.getElementById('campo').disabled=false;
+// 	      }
+
+// 	}
+	
+	
+	
+	function calendarioGetValue() {
+	  var text = document.getElementById("valueCalendario");
+	  var select= document.getElementById("calendario");
+	  var option = document.getElementById("calendario").value;
+	  
+	  
+
+	      if(option == "DIARIO"){
+	        	document.getElementById("divcampoDia").style.visibility ="visible";
+	        }
+	      if(option != "DIARIO"){
+	    	  document.getElementById("divcampoDia").style.visibility ="hidden";
+	        }
+
+	  
+	  text.value=select.value;
+	  
+
+
+}
+	
 // 	function cicloGetValue() {
 // 		  var text = document.getElementById("valueCiclo");
 // 		  var select= document.getElementById("ciclo");
@@ -68,10 +105,12 @@
 // 			  text.value=select.value;
 // 	}
 	
+	
+
 
 	function cadastrar(event) {
 		
-		if(document.getElementById('owner').value == "" || document.getElementById('tabela').value == "" || document.getElementById('agroup').value == ""){
+		if(document.getElementById('owner').value == "" || document.getElementById('tabela').value == ""){
 			alert('Preencha todos os campos.');
 		}else{
 			document.getElementById("formparametros").submit();
@@ -238,7 +277,7 @@ h1 {
 			<section>
 			<form class="form-inline" id="formparametros" action="ParametrosMovel" method="post"> 
 			
-			<input type="text" hidden="true" id="valueprocesso" name="processo" value="MOVEL">
+			<input type="text" hidden="true" id="valueprocesso" name="processo" value="MVEL">
 <!-- 			<input type="text" hidden="true" id="valueBanco" name="banco" value="TERADATA" disabled="disabled"> -->
 			
 			<form>
@@ -260,11 +299,8 @@ h1 {
 				<input type="text" id="nmlogico" name="nmlogico" style="text-transform:uppercase;">
 				PROCESSO:
 				<select  class="form-control inputCad" id="processo"  onchange="processoNameGetValue()" >
-					<option value="MOVEL">MOVEL</option>
+					<option value="MVEL">MOVEL</option>
 					<option value="FTRM_MVEL">FATURAMENTO</option>
-					<option value="SVA_PRCR">SVA PARCEIRO</option>
-					<option value="PRQE_MVEL">PARQUE</option>
-					<option value="TRFG_VLRD">TRÁFEGO VALORADO</option>
 				</select>
 				
 				MODULO:
@@ -286,7 +322,22 @@ h1 {
 					<option value="Atendimento">ATENDIMENTO</option>
 					<option value="Portabilidade Historica">PORTABILIDADE HISTORICA</option>
  				</select> 
-
+ 				CALENDARIO:
+				<select  class="form-control inputCad" id="calendario" onchange="calendarioGetValue()" >
+					<option value="SEMANAL">SEMANAL</option>
+					<option value="DIARIO">DIARIO</option>
+					<option value="CICLO">CICLO</option>
+				</select>
+				<input  type="text" hidden="true" id="valueCalendario" name="calend" value="SEMANAL">
+<!-- 				<div id="divcampo" style="margin-top:-80px; margin-left:980px; visibility:hidden"> -->
+<!-- 					CAMPO: -->
+<!-- 					<input  type="date" id="datacal" style="text-transform:uppercase;width: 180px;" onfocus="desabilita()" required>				 -->
+<!-- 				</div> -->
+				
+				<div id="divcampoDia" style="margin-top:-80px; margin-left:980px; visibility:hidden">
+					DIAS:
+					<input  type="number" id="campoDiario" name="campoDiario" style="text-transform:uppercase;width: 180px;" onfocus="desabilita()" value="1" required>				
+				</div>
 					DT REF:
 <!-- 					<select class="form-control inputCad" id="dataref" onchange="datarefGetValue()"> -->
 <!-- 					<option value="DT_FOTO">DT_FOTO</option> -->
@@ -319,7 +370,7 @@ h1 {
 <!-- 					<option value="DT_RFRN_PTCL">DT_RFRN_PTCL</option> -->
 <!-- 					<option value="DT_VGNC_INCL">DT_VGNC_INCL</option> -->
 <!-- 				</select> -->
-				<input type="text" id="valueDataRef" name="dataref" style="text-transform:uppercase;">
+				<input type="text" id="valueDataRef" name="dataref" style="text-transform:uppercase; width: 180px;">
 				
 				
 				AGRUPADOR:

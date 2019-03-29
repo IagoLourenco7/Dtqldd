@@ -27,6 +27,15 @@
 
 	}
 	
+	function fechGetValue() {
+		  var text = document.getElementById("valueFecha");
+		  var select= document.getElementById("fecha");
+		  
+		  
+		  text.value=select.value;
+
+	}
+	
 	function moduloGetValue() {
 		  var text = document.getElementById("valuemodulo");
 		  var select= document.getElementById("modulo");
@@ -71,9 +80,6 @@
 			document.getElementById("formparametros").submit();
 		    alert('Cadastrado com Sucesso.');
 		}
-
-	    
-
 	}
 	
 
@@ -313,7 +319,19 @@ h1 {
 <!-- 					<option value="DT_RFRN_PTCL">DT_RFRN_PTCL</option> -->
 <!-- 					<option value="DT_VGNC_INCL">DT_VGNC_INCL</option> -->
 <!-- 				</select> -->
-				<input type="text" id="valueDataRef" name="dataref" style="text-transform:uppercase;"s>
+				<input type="text" id="valueDataRef" name="dataref" style="text-transform:uppercase;">
+				
+				FECHAM. SMNAL:
+				<input  type="text" hidden="true" id="valueFecha" name="fecha" style="text-transform:uppercase;width: 180px;" required value="DOMINGO">
+				<select class="form-control inputCad" id="fecha" style="width: 180px" onchange="fechGetValue()">
+					<option value="DOMINGO">DOMINGO</option>
+					<option value="SEGUNDA">SEGUNDA</option>
+					<option value="TERCA">TERCA</option>
+					<option value="QUARTA">QUARTA</option>
+					<option value="QUINTA">QUINTA</option>
+					<option value="SEXTA">SEXTA</option>
+					<option value="SABADO">SABADO</option>
+				</select>
 				
 				AGRUPADOR:
 				<input  type="text"  id="agroup" name="agroup" style="text-transform:uppercase;width: 180px;" required>
@@ -337,11 +355,7 @@ h1 {
 				</form>
 				</section>
 			</div>
-			
-			
 
-		
-			
 
 <!-- 			<div class="footer" > -->
 <!-- 			<img id="rod" src="img/Rod.png"/> -->

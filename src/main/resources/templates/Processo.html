@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Parametrizacao DataQuality</title>
+
+<script type="text/javascript">
+
+function cadastrar(event) {
+	
+	if(document.getElementById('owner').value == "" || document.getElementById('tabela').value == "" || document.getElementById('processo').value == ""){
+		alert('Preencha todos os campos.');
+	}else{
+		document.getElementById("formparametrosprocesso").submit();
+	    alert('Cadastrado com Sucesso.');
+	}
+
+    
+
+}
+
+// var array = [];   
+// var d = document;
+// function processar(idTabela)
+// {
+// 	var newRow = d.createElement('tr');
+// 	newRow.insertCell(0).innerHTML = d.getElementsByName('tabela')[0].value;
+// 	newRow.insertCell(1).innerHTML = d.getElementsByName('owner')[0].value;
+// 	newRow.insertCell(2).innerHTML = d.getElementsByName('user')[0].value;
+// 	newRow.insertCell(3).innerHTML = '<input type="button" value="Delete" onclick="deleteRow(this.parentNode.parentNode.rowIndex)">';
+// 	d.getElementById(idTabela).appendChild(newRow);
+	
+
+
+
+// 	array.push(document.getElementsByName('tabela')[0].value+";"+document.getElementsByName('owner')[0].value+";"+document.getElementsByName('user')[0].value);
+// 	console.log(array);
+	
+// 	data=JSON.stringify(array);
+// 	 console.log(data);
+    
+// //     set fso = CreateObject("Scripting.FileSystemObject");  
+// //     set s = fso.CreateTextFile("C:\test.txt", true);
+// //     s.writeline(array);
+// //     s.Close();
+    
+// 	return false;
+// }
+
+
+// function deleteRow(i){
+//     document.getElementById('myTable').deleteRow(i)
+// }
+
+// var jsonObjs = JSON.stringify(array);
+
+// $.post("salvarObj", {
+//     "array " : array 
+// }, function(data) {
+
+//    alert(data);
+// });
+
+
+// function WriteToFile()
+// { 
+//     var txt = new ActiveXObject("Scripting.FileSystemObject");
+//     var s = txt.CreateTextFile("11.txt", true);
+//     s.WriteLine('Hello');
+//     s.Close();
+//  }
+
+
+   </script>  
+   
+   		<title>Parametrizacao DataQuality</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+		
+		<img id="Cabecalho" src="img/Cabecalho.png" width="100%"/>
+</head>
+
+<style>
+		
+		
+			@font-face{
+    		font-family: "Vivo"
+    		url("vivo-regular-webfont.ttf") format("truetype");
+    	}
+    	.vivo-font{
+    	font-family: "Vivo";
+
+       } 
+
+
+      .box-body {
+		margin:10px;
+		margin-top: 10px;
+		background-color: white;
+		border-style: solid;
+    	border-width: 3px;
+		border-color: #D5D5D5;
+   	    padding: 10px;
+		}
+
+/* 		.footer { */
+/*     		bottom:-11%; */
+/*     		position:absolute; */
+/*      		align:right;  */
+/*      		width: 20px; */
+/*     	} */
+
+    			.footer {
+    		bottom:1.15%;
+    		position:absolute;
+    		width:98.85%;
+    		height:50;
+/*     		margin-left: -225px; */
+    	}
+    	
+    	.form-style-8{
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 1240px;
+	padding: 25px;
+	position: absolute;
+	background: #FFFFFF;
+	color: #3A2B81;
+	font-weight: bold;
+	margin: 26px;
+	margin-bottom:4px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+
+
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	width: 18%;
+	font-weight: bold;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 35px;
+	font: 14px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+
+.form-style-8 button, 
+.form-style-8 button{
+	-moz-box-shadow: inset 0px 1px 0px 0px #3A2B81;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #3A2B81;
+	box-shadow: inset 0px 1px 0px 0px #3A2B81;
+	background-color: #3A2B81;
+	border: 1px solid #3A2B81;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+ 	padding: 10px 13px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.form-style-8 button:hover, 
+.form-style-8 button:hover {
+	background:linear-gradient(to bottom, #34CACA 5%, #3A2B81 100%);
+	background-color:#34CACA;
+}
+
+hr{
+  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	width: 100%;
+	font-weight: bold;
+/* 	padding: 1px; */
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 1px;
+/* 	margin-bottom:-7px; */
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 10px;  
+}
+
+h1 {
+		top:-3.5%;
+    		position:absolute;
+    		align: rigth;
+    		width:100%;
+    		heigth=300;
+    background-color: #3A2B81;
+}
+		
+		
+		</style>
+		
+<body style="background-color: #F9F9F9">
+
+<section>
+<div class="form-style-8">
+<!-- <form name="formulario" method="post" onsubmit="return processar('myTable')"> -->
+<form class="form-inline" id="formparametrosprocesso" action="ParametrosProcesso" method="post"> 
+	TABELA:  	<input type="text" id="tabela" name="tabela" style="text-transform:uppercase;">
+	OWNER:  	<input type="text" id="owner" name="owner" style="text-transform:uppercase;">
+	PROCESSO:  	<input type="text" id="processo" name="processo" style="text-transform:uppercase;">
+	<br>
+	<br>
+	<hr>
+	<br>
+	<br>
+	<a href= "/dataquality">
+	<img id="voltar" src="img/voltar.png"/>
+	</a>
+	<button id="gravar" type="button"  class= "btn-default btn_sub" onClick="cadastrar()" style="margin-left:35%; color: #3A2B81; background-color: white; border: 1px solid white; box-shadow: inset 0px 1px 0px 0px white;">GRAVAR</button>
+	<button type="reset"  style="margin-left:5%;">LIMPAR</button>
+</form>
+<!-- <table border='1' width="500"> -->
+<!-- 	<tbody id="myTable" width="500"> -->
+<!-- 	</tbody> -->
+   
+   
+<!-- </table> -->
+</div>
+</section>
+<div class="footer">
+		   <table width="100%" height="50" style="background-color: #3A2A80;">
+		   <tr>
+			<th align="right" ><span class="vivo-font" style="color: #FFFFFF; margin:35px; font-size: 30px;"><img id="Cab" src="img/Roda.png"/></span></th>
+		   </tr>
+			</table>
+			</div>
+</body>
+</html>

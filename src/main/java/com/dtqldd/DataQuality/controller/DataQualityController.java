@@ -31,5 +31,15 @@ public class DataQualityController {
 	        return "teraQuali";
 	    }
 		
+		@RequestMapping("/processo")
+	    public String processo(){
+	        return "Processo";
+	    }
+		
+		@RequestMapping("/teste")
+	    public String teste(){
+	        return "TesteProcesso";
+	    }
+		
 
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+// console.log(tableToJSON("table"));
+var d = document;
+function processar(idTabela)
+{
+	var newRow = d.createElement('tr');
+	newRow.insertCell(0).innerHTML = d.getElementsByName('tabela')[0].value;
+	newRow.insertCell(1).innerHTML = d.getElementsByName('owner')[0].value;
+	newRow.insertCell(2).innerHTML = d.getElementsByName('user')[0].value;
+	newRow.insertCell(3).innerHTML = '<input type="button" value="Delete" onclick="deleteRow(this.parentNode.parentNode.rowIndex)">';
+	d.getElementById(idTabela).appendChild(newRow);
+
+	return false;
+}
+
+function tableToJSON(tableSelector){
+  var array = new Array();
+  var $thead = $(tableSelector).find("thead > tr > th");
+  var $tbody =$(tableSelector).find("tbody > tr");
+
+  $tbody.each(function(x){
+    var obj = new Object();  
+    var $row = $(this);
+    $thead.each(function(i){
+      var attributeName = $(this).text();
+      obj[attributeName] = $row.find("td")[i].innerText
+    });
+    array.push(obj);
+  });	 
+  return array;
+  console.log(array)
+}
+
+
+
+
+</script>
+</head>
+<body>
+	<form name="formulario" method="post" onsubmit="return processar('myTable')">  
+		Tabela:  <input type="text" name="tabela">
+		Owner:  <input type="text" name="owner">
+		Processo:  <input type="text" name="user">
+		<input type="submit" value="Confirmar"> 
+		<a href="/" name="voltar">Voltar</a>
+	</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<table>
+<thead>
+  <tr>
+    <th>Tabela</th>
+    <th>Owner</th>
+    <th>Processo</th>
+  </tr>
+</thead>
+<tbody id="myTable">
+<!--   <tr><td>Teste 1</td><td>Teste 1</td><td>Teste 3</td></tr> -->
+<!--   <tr><td>Teste 4</td><td>Teste 5</td><td>Teste 6</td></tr> -->
+  
+</tbody>
+</table>
+</body>
+</html>
